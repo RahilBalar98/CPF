@@ -1,0 +1,97 @@
+﻿ArrayList<String> arr = new ArrayList<>();
+e = element, i = index
+* arr.add(e);
+* arr.add(i,e);
+* arr.contains(e); //returns bool
+* arr.get(e);
+* arr.get(i);
+* arr.size();
+* arr.remove(e); //returns bool
+* arr.remove(i);//returns bool
+* arr.toArray();
+* arr.indexOf(e);
+* arr.set(i,e);
+* Collections.sort(arr); //sorts arraylist
+HashSet<Integer> h = new HashSet<>();
+* h.add(e);
+* h.contains(e);
+* h.remove(e);
+String s = “hello”;
+* s.toCharArray();
+* s.indexOf(substring);
+* s.chatAt(i);
+* s.toUpperCase();
+* s1.equals(s2); //Note to self: DON’T DO “==” AGAIN AND WONDER WHY THE ANSWER IS CONSTANTLY INCORRECT
+* s1.equalsIgnoreCase(s2);
+* s1.compareTo(s2); //returns s1-s2, in dictionary order so a-b returns -1
+* s1.contains(s2);
+* s.length();
+* s.startsWith(“hell”); //s.endsWith(“ello”), returns boolean
+* s.substring(incl,excl); // incl: inclusive index, included, excl: exclusive index, excluded
+* str_array = s.split(“ “);//return string array separated by spaces. “Hello world” returns [“Hello”,”world”]
+Iterator itr = array_name.iterator(); //or list.iterator()
+* itr.hasNext(); //returns bool
+* itr.next();
+* itr.remove(); //removes curr element
+Random r = new Random();
+* r.nextInt(n); //return a random int from 0 to n
+OR
+* Math.random(); //returns a random double between 0.0 and 1.0
+Stack<Integer> s = new Stack<>();
+* s.push();
+* s.peek();
+* s.pop();
+* s.empty(); //returns bool
+* s.size();
+Queue<Integer> q = new ArrayList<>();
+* q.add(e);
+* q.remove(); //throws exception if empty
+* q.poll(); //same as remove but returns null if empty
+* q.peek();
+* q.size();
+HashMap<String, Integer> h = new HashMap<>();
+k = key, v = value
+* h.put(k,v);
+* h.get(k) //returns v mapped to k
+* h.remove(k) //returns v and removes it.
+* h.size();
+* h.containsKey(k);
+* h.containsValue(v);
+* Looping through a HashMap:
+//FIRST METHOD
+for(Map.Entry<String, Integer> element : h.entrySet()){
+     element.getKey(); //use this to do whatever you need to with   the key set
+     element.getValue(); //use this for values.
+}
+//OR SECOND METHOD
+for(String key: h.keySet()){…..}
+for(Integer val: h.values()){……}
+PriorityQueue<Integer> pq = new PriorityQueue<>()
+Let’s say you want your own comparator, example, the pq has keys of a hashmap as it’s elements, and they need to be arranged according to their values in a hashmap.
+pq = new PriorityQueue<>((a,b) -> map.get(a)-map.get(b));
+Or, if you want to have a max heap (max elements on top/descending order)
+pq = new PriorityQueue<>((a,b)-> b-a);
+or you can define your own comparator separately( named MyComparator for example):
+pq = new PriorityQueue<>(new MyComparator());
+Other Useful Methods:
+* Character.isDigit(c); //returns bool
+* Character.isAlphabetic(c);
+* Integer.parseInt(str); //if str = “1234”, it returns integer 1234.
+* Float.parseFloat(str); //same as above for floats
+* Integer.toBinaryString(num); //returns binary representation of num, input = 10 returns “1010”
+* Arrays.asList(arr); //converts array to list
+* Integer.MIN_VALUE //returns least possible int in Java
+* object.hashCode(); //returns hashcode value for object
+Comparator:
+* Arrays.sort(arr, (a.b)->b-a); //sorts in descending order
+* Defining MySort to use in other sorting methods (example sort arrays based on their first element)
+public class MySort implements Comparator<int[]>{
+
+
+      public int compare(int[] a, int[] b){
+            return a[0]-b[0];
+      }
+}
+And then using it like:
+* Arrays.sort(arr, MySort)
+* For ArrayLists, Collections.sort(arraylist, MyArrListSort());
