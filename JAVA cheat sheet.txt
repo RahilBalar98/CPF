@@ -7,7 +7,7 @@ e = element, i = index
 * arr.get(i);
 * arr.size();
 * arr.remove(e); //returns bool
-* arr.remove(i);//returns bool
+* arr.remove(i);//returns bool 
 * arr.toArray();
 * arr.indexOf(e);
 * arr.set(i,e);
