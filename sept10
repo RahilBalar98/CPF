@@ -17,7 +17,7 @@ class Solution {
                 cnt[i].put(diff, origin + sum + 1);
                 ans += sum;
             }
-        }
+        } 
         return (int)ans;        
     } 
 }
