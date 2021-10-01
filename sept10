@@ -12,7 +12,7 @@ class Solution {
                     continue;
                 }
                 int diff = (int)delta;
-                int sum = cnt[j].getOrDefault(diff, 0);
+                int sum = cnt[j].getOrDefault(diff, 0); 
                 int origin = cnt[i].getOrDefault(diff, 0);
                 cnt[i].put(diff, origin + sum + 1);
                 ans += sum;
